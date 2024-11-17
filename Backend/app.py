@@ -9,6 +9,9 @@ CORS(app)  # Enable CORS for all routes
 # Load the saved model and scaler
 model = joblib.load('lung_cancer_model.pkl')
 scaler = joblib.load('scaler.pkl')
+@app.route('/')
+def home():
+    return "welcome to flask app"
 
 @app.route('/predict', methods=['POST'])
 def predict():
